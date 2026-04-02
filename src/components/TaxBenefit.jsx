@@ -61,7 +61,7 @@ export default function TaxBenefit() {
                 <div className="space-y-6">
                   {[
                     { label: 'Max. steuerfreier Betrag / Tag', value: '7,23 €', sub: 'je Mitarbeitendem' },
-                    { label: 'Mögliche Ersparnis / Monat (20 AT)', value: '~ 144,60 €', sub: 'je Mitarbeitendem' },
+                    { label: 'Mögliche Ersparnis / Monat', value: '~ 144,60 €', sub: 'je Mitarbeitendem' },
                     { label: 'Ersparnis bei 100 MA / Jahr', value: '~ 173.520 €', sub: 'Steuern & Sozialabgaben' },
                   ].map(({ label, value, sub }) => (
                     <div key={label} className="flex items-center justify-between py-4 border-b border-gray-100 last:border-0">
