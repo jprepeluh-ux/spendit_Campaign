@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ES Rebond Grotesque Trial – custom font */
+@font-face {
+  font-family: 'ES Rebond Grotesque Trial';
+  src: url('/Fonts/ESRebondGrotesqueTrial-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ES Rebond Grotesque Trial';
+  src: url('/Fonts/ESRebondGrotesqueTrial-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ES Rebond Grotesque Trial';
+  src: url('/Fonts/ESRebondGrotesqueTrial-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ES Rebond Grotesque Trial';
+  src: url('/Fonts/ESRebondGrotesqueTrial-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-brand-text antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hero image – object-position responsive */
+.hero-img { object-position: 50% center; }
+
+@media (min-width: 650px) { .hero-img { object-position: 65% center; } }
+@media (min-width: 900px) { .hero-img { object-position: right center; } }
