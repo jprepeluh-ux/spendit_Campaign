@@ -69,7 +69,7 @@ export default function TaxBenefit() {
                         <p className="font-body text-sm text-brand-text mb-0.5">{label}</p>
                         <p className="font-body text-xs text-brand-text">{sub}</p>
                       </div>
-                      <span className="font-headline font-bold text-2xl text-brand-green">
+                      <span className="font-headline font-bold text-2xl max-md:text-[20px] text-brand-green">
                         {value}
                       </span>
                     </div>
