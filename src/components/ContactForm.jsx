@@ -54,7 +54,7 @@ export default function ContactForm() {
 
           {/* Right form */}
           <ScrollReveal direction="right" delay={0.1}>
-            <div className="bg-[#E8F5E9] rounded-4xl p-10">
+            <div className="bg-[#E8F5E9] rounded-4xl p-10 max-md:px-6">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
