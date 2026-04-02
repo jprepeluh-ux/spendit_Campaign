@@ -55,7 +55,7 @@ export default function Purpose() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {benefits.map(({ icon: Icon, title, description }, i) => (
             <ScrollReveal key={title} delay={0.1 * i} className="flex flex-col">
-              <div className="bg-white flex flex-col items-center gap-10 p-8 rounded-[32px] shadow-[0px_4px_33px_0px_rgba(27,58,18,0.06)] flex-1">
+              <div className="bg-white flex flex-col items-center gap-10 p-8 max-md:px-6 rounded-[32px] shadow-[0px_4px_33px_0px_rgba(27,58,18,0.06)] flex-1">
 
                 {/* Icon badge */}
                 <div className="w-16 h-16 rounded-[24px] bg-[#dbf0d8] flex items-center justify-center shrink-0">

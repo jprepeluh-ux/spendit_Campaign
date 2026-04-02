@@ -52,7 +52,7 @@ export default function TaxBenefit() {
               <div className="absolute -right-6 -top-6 w-40 h-40 rounded-full bg-[#E8F5E9] max-lg:right-8 max-lg:-top-4" aria-hidden="true" />
               <div className="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#E8F5E9] max-lg:-left-0 max-lg:-bottom-6" aria-hidden="true" />
 
-            <div className="bg-white rounded-4xl p-10 shadow-card-lg relative z-10">
+            <div className="bg-white rounded-4xl p-10 max-md:px-6 shadow-card-lg relative z-10">
               <div>
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#dbf0d8] mb-8">
                   <Euro size={26} className="text-brand-green" strokeWidth={1.75} />

@@ -75,7 +75,7 @@ export default function Mission() {
                 </div>
 
                 {/* Text – free below image, no card wrapper */}
-                <div className="pt-8 px-2 flex flex-col gap-6 flex-1">
+                <div className="pt-8 px-2 max-md:px-6 flex flex-col gap-6 flex-1">
                   <h3 className="font-headline font-extrabold text-[32px] leading-8 text-brand-text">
                     {title}
                   </h3>
