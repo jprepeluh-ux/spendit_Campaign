@@ -48,9 +48,9 @@ export default function TaxBenefit() {
           <ScrollReveal direction="right" delay={0.1} className="overflow-visible">
             <div className="relative overflow-visible">
               {/* Decorative circles – behind the card with parallax */}
-              <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-[#E8F5E9]" aria-hidden="true" />
-              <div className="absolute -right-6 -top-6 w-40 h-40 rounded-full bg-[#E8F5E9]" aria-hidden="true" />
-              <div className="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#E8F5E9]" aria-hidden="true" />
+              <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-[#E8F5E9] max-lg:-right-0 max-lg:-top-8" aria-hidden="true" />
+              <div className="absolute -right-6 -top-6 w-40 h-40 rounded-full bg-[#E8F5E9] max-lg:right-8 max-lg:-top-4" aria-hidden="true" />
+              <div className="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#E8F5E9] max-lg:-left-0 max-lg:-bottom-6" aria-hidden="true" />
 
             <div className="bg-white rounded-4xl p-10 shadow-card-lg relative z-10">
               <div>

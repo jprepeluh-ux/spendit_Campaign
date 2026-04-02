@@ -18,7 +18,13 @@
       "Bash(gh auth:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m 'Initial commit – Lunchit by Spendit One-Pager:*)"
+      "Bash(git commit -m 'Initial commit – Lunchit by Spendit One-Pager:*)",
+      "Bash(gh repo:*)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami:*)",
+      "Bash(vercel deploy:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
