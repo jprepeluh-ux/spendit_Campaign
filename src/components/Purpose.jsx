@@ -1,4 +1,5 @@
 import { Heart, TrendingUp, Users, Smile, Star, Zap, Shield, Award } from 'lucide-react'
+import { stegaClean } from '@sanity/client/stega'
 import ScrollReveal from './ScrollReveal'
 
 const ICON_MAP = {
@@ -57,7 +58,7 @@ export default function Purpose({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {benefits.map(({ iconName, title, description }, i) => {
-            const Icon = ICON_MAP[iconName] ?? Heart
+            const Icon = ICON_MAP[stegaClean(iconName)] ?? Heart
             return (
               <ScrollReveal key={title} delay={0.1 * i} className="flex flex-col">
                 <div className="bg-white flex flex-col items-center gap-10 p-8 max-md:px-6 rounded-[32px] shadow-[0px_4px_33px_0px_rgba(27,58,18,0.06)] flex-1">
