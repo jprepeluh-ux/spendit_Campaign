@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import { urlFor } from '../../sanity/lib/image'
 
-const HERO_IMAGE_URL = '/key_visual.png'
+const HERO_IMAGE_FALLBACK = '/key_visual.png'
 const SPENDIT_LOGO_URL = '/spendit_Logo.svg'
 
 const cardVariants = {
@@ -29,51 +30,57 @@ const plusVariants = {
   },
 }
 
-export default function Hero() {
+export default function Hero({
+  headlineStart = 'Gönn deinem Team das tägliche',
+  headlineHighlight = 'Plus',
+  subheadline = 'Genieße jede Pause mit Lunchit – deinem digitalen Plus zum Essenszuschuss.',
+  ctaLabel = 'Zur kostenlosen Beratung',
+  ctaHref = '#kontakt',
+  backgroundImage = null,
+}) {
+  const imageUrl = backgroundImage?.asset?._ref
+    ? urlFor(backgroundImage).width(2560).quality(90).auto('format').fit('max').url()
+    : HERO_IMAGE_FALLBACK
+  const imageAlt = backgroundImage?.alt || 'Zwei Menschen genießen ihre Mittagspause in der Stadt'
+
   return (
     <>
       {/* ── MOBILE layout (< md) ── */}
       <section className="md:hidden relative w-full min-h-screen overflow-hidden" aria-label="Hero Stage">
-        {/* Full-bleed image */}
         <img
-          src={HERO_IMAGE_URL}
-          alt="Zwei Menschen genießen ihre Mittagspause in der Stadt"
+          src={imageUrl}
+          alt={imageAlt}
           className="absolute inset-0 w-full h-full object-cover object-[50%_30%]"
           loading="eager"
         />
 
-        {/* Floating content card – bottom overlay */}
         <motion.div
           variants={cardVariants}
           initial="hidden"
           animate="visible"
           className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-[38px] p-6 flex flex-col gap-8"
         >
-          {/* Text */}
           <div className="flex flex-col gap-5">
             <h1 className="font-headline font-extrabold text-[32px] leading-[40px] text-brand-text">
-              Gönn deinem Team das tägliche{' '}
+              {headlineStart}{' '}
               <motion.span
                 className="text-brand-green-light inline-block"
                 variants={plusVariants}
                 animate="animate"
               >
-                Plus
+                {headlineHighlight}
               </motion.span>
             </h1>
             <p className="font-body text-[16px] text-brand-text leading-relaxed">
-              Genieße jede Pause mit{' '}
-              <strong className="font-semibold">Lunchit</strong>
-              {' '}– deinem digitalen Plus zum Essenszuschuss.
+              {subheadline}
             </p>
           </div>
 
-          {/* CTA – full width */}
           <a
-            href="#kontakt"
+            href={ctaHref}
             className="flex items-center justify-center h-16 w-full bg-brand-green text-white font-body font-semibold text-[16px] rounded-xl shadow-cta hover:bg-[#3a7227] transition-colors"
           >
-            Zur kostenlosen Beratung
+            {ctaLabel}
           </a>
         </motion.div>
       </section>
@@ -82,8 +89,8 @@ export default function Hero() {
       <section className="hidden md:block relative w-full min-h-screen overflow-hidden" aria-label="Hero Stage">
         <div className="absolute inset-0">
           <img
-            src={HERO_IMAGE_URL}
-            alt="Zwei Menschen genießen ihre Mittagspause in der Stadt"
+            src={imageUrl}
+            alt={imageAlt}
             className="hero-img absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
@@ -103,27 +110,25 @@ export default function Hero() {
           >
             <div className="flex flex-col gap-6">
               <h1 className="font-headline font-extrabold text-[56px] leading-[1.1] text-brand-text text-balance">
-                Gönn deinem Team das tägliche{' '}
+                {headlineStart}{' '}
                 <motion.span
                   className="text-brand-green-light inline-block"
                   variants={plusVariants}
                   animate="animate"
                 >
-                  Plus
+                  {headlineHighlight}
                 </motion.span>
               </h1>
               <p className="font-body text-lg text-brand-text leading-relaxed">
-                Genieße jede Pause mit{' '}
-                <strong className="font-semibold text-brand-text">Lunchit</strong>
-                {' '}– deinem digitalen Plus zum Essenszuschuss.
+                {subheadline}
               </p>
             </div>
             <div className="flex items-center justify-between gap-6 flex-wrap">
               <a
-                href="#kontakt"
+                href={ctaHref}
                 className="inline-flex items-center justify-center h-16 px-7 bg-brand-green text-white font-body font-semibold text-lg rounded-xl shadow-cta hover:bg-[#3a7227] hover:-translate-y-1 transition-all duration-200"
               >
-                Zur kostenlosen Beratung
+                {ctaLabel}
               </a>
               <div className="flex items-center gap-3 shrink-0">
                 <span className="font-body text-sm text-brand-blue">by</span>
