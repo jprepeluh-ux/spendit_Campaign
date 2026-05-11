@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { label: 'Vorteile', href: '#vorteile', sectionId: 'vorteile' },
-  { label: 'Preise', href: '#preise', sectionId: 'preise' },
   { label: 'So funktionierts', href: '#mission', sectionId: 'mission' },
   { label: 'Steuervorteil', href: '#steuervorteil', sectionId: 'steuervorteil' },
   { label: 'Kontakt', href: '#kontakt', sectionId: 'kontakt' },
